@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity">
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:text="HomePage"
+        android:textColor="#F4F2F2"
+        android:textSize="36sp"
+       />
+
+    <Button
+        android:id="@+id/addDonationsButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/top"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="50dp"
+        android:text="Add Donation" />
+
+    <Button
+        android:id="@+id/checkDonationsButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_below="@+id/addDonationsButton"
+        android:background="@drawable/button_background"
+        android:text="Donations" />
+
+    <Button
+        android:id="@+id/addPostButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_below="@+id/checkDonationsButton"
+        android:background="@drawable/button_background"
+        android:text="Add Post"
+        />
+
+    <Button
+        android:id="@+id/postsButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/addPostButton"
+        android:background="@drawable/button_background"
+        android:text="Posts" />
+
+</RelativeLayout>
