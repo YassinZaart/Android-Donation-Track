@@ -1,4 +1,4 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.util
 
 class AccountManager {
 

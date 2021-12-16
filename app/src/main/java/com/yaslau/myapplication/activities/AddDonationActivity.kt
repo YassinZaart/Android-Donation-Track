@@ -1,9 +1,8 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import com.yaslau.myapplication.R
 
 class AddDonationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

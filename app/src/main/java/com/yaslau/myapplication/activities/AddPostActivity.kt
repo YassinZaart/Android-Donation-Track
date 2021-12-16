@@ -1,7 +1,8 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.yaslau.myapplication.R
 
 class AddPostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

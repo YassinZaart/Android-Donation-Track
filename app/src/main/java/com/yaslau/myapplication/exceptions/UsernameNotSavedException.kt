@@ -1,4 +1,4 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.exceptions
 
 import java.lang.Exception
 

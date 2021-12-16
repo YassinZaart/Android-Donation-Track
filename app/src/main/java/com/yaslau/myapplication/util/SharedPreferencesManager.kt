@@ -1,7 +1,8 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.yaslau.myapplication.exceptions.UsernameNotSavedException
 
 
 class SharedPreferencesManager(var context: Context) {

@@ -1,4 +1,4 @@
-package com.yaslau.myapplication
+package com.yaslau.myapplication.repository
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
