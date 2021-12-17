@@ -1,6 +1,7 @@
 package com.yaslau.myapplication.repository
 
 import android.util.Log
+import com.yaslau.myapplication.data.PostData
 import com.yaslau.myapplication.states.LoginState
 import com.yaslau.myapplication.states.SignUpState
 import kotlinx.coroutines.CoroutineScope
@@ -28,6 +29,20 @@ class Repository {
             409 -> SignUpState.USER_EXISTS
             else -> SignUpState.API_ERROR
         }
+    }
+
+    suspend fun getUserName(email: String) : String?{
+        val response = RetrofitInstance.api.getUser(email)
+        return response.body()?.name
+    }
+
+    suspend fun insertPost(charityName: String, name: String, phone_number: String, address: String, description: String ){
+        RetrofitInstance.api.insertPost(charityName, name, phone_number, address, description)
+    }
+
+    suspend fun getPosts(charityName: String) : List<PostData>?{
+        val response = RetrofitInstance.api.getPosts(charityName)
+        return response.body()
     }
 
 

@@ -35,4 +35,20 @@ class SharedPreferencesManager(var context: Context) {
         return sharedPref.getBoolean("LOGGED", false)
     }
 
+    fun retrieveName() : String{
+        val name = sharedPref.getString("NAME", null)
+        if (name != null) {
+            return name
+        }
+        else throw UsernameNotSavedException()
+    }
+
+    fun storeName(name : String){
+        val editor = sharedPref.edit()
+        editor.apply{
+            putString("NAME", name)
+        }.apply()
+    }
+
+
 }

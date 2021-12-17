@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.yaslau.myapplication.R
 import com.yaslau.myapplication.states.LoginState
 import com.yaslau.myapplication.util.AccountManager
+import com.yaslau.myapplication.util.SharedPreferencesManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,6 +31,15 @@ class MainActivity : AppCompatActivity() {
         emailText = findViewById(R.id.emailEditText)
         passwordText = findViewById(R.id.passwordEditText)
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val sharedPreferencesManager = SharedPreferencesManager(this)
+        if(sharedPreferencesManager.retrieveLoginStatus()) {
+            val myIntent = Intent(this, HomePageActivity::class.java)
+            startActivity(myIntent)
+        }
     }
 
     fun signUp(){
