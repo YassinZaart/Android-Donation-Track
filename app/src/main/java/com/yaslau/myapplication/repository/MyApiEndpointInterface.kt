@@ -11,4 +11,8 @@ interface MyApiEndpointInterface {
     suspend fun getSignInMessage(@Query(value = "email") email : String,
                          @Query(value = "password") password : String) : Response<MessageDataClass>
 
+    @POST("/signup")
+    suspend fun signUp(@Query(value = "email") email: String, @Query(value = "password") password : String,
+                       @Query(value = "name") name : String, @Query(value = "phone_number") phoneNumber : String,
+                       @Query(value = "city") city : String, @Query(value = "street") street : String) : Response<MessageDataClass>
 }
