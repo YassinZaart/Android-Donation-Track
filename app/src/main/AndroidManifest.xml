@@ -15,7 +15,7 @@
             android:name=".activities.DonationsActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.Posts"
+            android:name=".activities.PostsActivity"
             android:exported="true" />
         <activity
             android:name=".activities.AddDonationActivity"

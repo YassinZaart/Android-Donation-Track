@@ -28,7 +28,7 @@ class HomePageActivity : AppCompatActivity() {
         startActivity(myIntent)
     }
     fun getPosts(){
-        val myIntent = Intent(this, Posts::class.java)
+        val myIntent = Intent(this, PostsActivity::class.java)
         startActivity(myIntent)
     }
     fun getDonations(){

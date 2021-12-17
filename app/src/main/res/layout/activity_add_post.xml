@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
-        android:text="Name"
+        android:text="Address"
         app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/addressEditText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -63,8 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
-        android:text="Address"
-        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/addressEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/phoneNum"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
         android:text="Phone Number"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,11 +102,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/signUpButton"
+        app:layout_constraintBottom_toTopOf="@+id/addPostButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNum"
         app:layout_constraintVertical_bias="0.453" />
 
     <TextView
@@ -123,7 +123,7 @@
 
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/addPostButton"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:background="@drawable/button_background"
