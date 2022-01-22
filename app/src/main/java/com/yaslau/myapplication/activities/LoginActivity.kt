@@ -3,11 +3,13 @@ package com.yaslau.myapplication.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.yaslau.myapplication.R
+import com.yaslau.myapplication.repository.Repository
 import com.yaslau.myapplication.states.LoginState
 import com.yaslau.myapplication.util.AccountManager
 import com.yaslau.myapplication.util.SharedPreferencesManager
@@ -16,7 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     lateinit var emailText: EditText
     lateinit var passwordText: EditText
@@ -48,7 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(){
-        val accountManager = AccountManager(this)
+        val repository = Repository()
+        val sharedPref = SharedPreferencesManager(this)
+        val accountManager = AccountManager(repository, sharedPref)
         CoroutineScope(Dispatchers.IO).launch {
             val state =
                 accountManager.login(emailText.text.toString(), passwordText.text.toString())

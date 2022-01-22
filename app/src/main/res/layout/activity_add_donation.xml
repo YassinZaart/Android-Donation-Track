@@ -19,12 +19,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/usernameEditText"
+        android:id="@+id/typeEditText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintBottom_toTopOf="@+id/valueEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
-        android:text="ID"
-        app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
+        android:text="Type"
+        app:layout_constraintBottom_toTopOf="@+id/typeEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +45,12 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/idEditText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
+        app:layout_constraintBottom_toTopOf="@+id/typeEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
-        android:text="Type"
-        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
+        android:text="ID"
+        app:layout_constraintBottom_toTopOf="@+id/idEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/valueEditText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="93dp"
         android:text="Value"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintBottom_toTopOf="@+id/valueEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/addDonationButton"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:background="@drawable/button_background"
@@ -105,6 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
+        app:backgroundTint="@null"
         app:layout_constraintTop_toBottomOf="@+id/top"
         app:layout_constraintVertical_bias="0.644" />
 

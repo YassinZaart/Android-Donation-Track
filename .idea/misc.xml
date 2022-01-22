@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable-v24/rounded_corner.xml" value="0.1" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/button_background.xml" value="0.21203703703703702" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/rounded_corner.xml" value="0.21666666666666667" />
@@ -11,11 +12,13 @@
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_add_donation.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_add_post.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_donations.xml" value="0.12552083333333333" />
-        <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_posts.xml" value="0.1" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/card_view.xml" value="0.13229166666666667" />
+        <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/donation_item.xml" value="0.6" />
+        <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/post_item.xml" value="0.4" />
         <entry key="..\:/Users/zaart/AndroidStudioProjects/MyApplication5/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1787037037037037" />
       </map>
     </option>

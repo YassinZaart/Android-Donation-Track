@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,47 +15,96 @@
         android:text="HomePage"
         android:textColor="#F4F2F2"
         android:textSize="36sp"
-       />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addDonationsButton"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_below="@+id/top"
-        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/button_background"
-        android:layout_marginTop="50dp"
-        android:text="Add Donation" />
+        android:text="Add Donation"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
     <Button
         android:id="@+id/checkDonationsButton"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="100dp"
         android:layout_below="@+id/addDonationsButton"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/button_background"
-        android:text="Donations" />
+        android:text="Donations"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/addDonationsButton"
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
     <Button
         android:id="@+id/addPostButton"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="100dp"
         android:layout_below="@+id/checkDonationsButton"
         android:background="@drawable/button_background"
         android:text="Add Post"
-        />
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDonationsButton"
+        app:layout_constraintVertical_bias="0.086" />
 
     <Button
         android:id="@+id/postsButton"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
         android:layout_below="@id/addPostButton"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/button_background"
-        android:text="Posts" />
+        android:text="Posts"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addPostButton"
+        app:layout_constraintTop_toBottomOf="@+id/checkDonationsButton"
+        app:layout_constraintVertical_bias="0.086" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/myPostsButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/checkDonationsButton"
+        android:background="@drawable/button_background"
+        android:text="MY POSTS"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addPostButton"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/addPostButton"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/button_background"
+        android:text="LOG OUT"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addPostButton"
+        app:layout_constraintTop_toBottomOf="@+id/postsButton"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/up_rounded"
+        android:gravity="center"
+        android:textColor="#F4F2F2"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,9 +8,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.yaslau.myapplication.R
-import com.yaslau.myapplication.states.LoginState
+import com.yaslau.myapplication.repository.Repository
 import com.yaslau.myapplication.states.SignUpState
 import com.yaslau.myapplication.util.AccountManager
+import com.yaslau.myapplication.util.SharedPreferencesManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,12 +36,14 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun signIn(){
-        val myIntent = Intent(this, MainActivity::class.java)
+        val myIntent = Intent(this, LoginActivity::class.java)
         startActivity(myIntent)
     }
 
     fun signUp(){
-        val accountManager = AccountManager(this)
+        val repository = Repository()
+        val sharedPref = SharedPreferencesManager(this)
+        val accountManager = AccountManager(repository, sharedPref)
         CoroutineScope(Dispatchers.IO).launch {
             val state =
                 accountManager.signUp(nameText.text.toString(), emailText.text.toString(), passwordText.text.toString())
@@ -69,7 +72,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun Intent(coroutineScope: CoroutineScope, java: Class<SignUpActivity>): Intent {
-        return Intent(this, MainActivity::class.java)
+        return Intent(this, LoginActivity::class.java)
     }
 
 }

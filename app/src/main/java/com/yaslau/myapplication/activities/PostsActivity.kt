@@ -2,13 +2,12 @@ package com.yaslau.myapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.ListView
-import android.widget.ArrayAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.yaslau.myapplication.R
+import com.yaslau.myapplication.adapters.PostsAdapter
+import com.yaslau.myapplication.data.PostData
 import com.yaslau.myapplication.repository.Repository
-import com.yaslau.myapplication.util.ModelToList
 import com.yaslau.myapplication.util.SharedPreferencesManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,23 +16,29 @@ import kotlinx.coroutines.withContext
 
 
 class PostsActivity : AppCompatActivity() {
+
+    private lateinit var recylerview : RecyclerView
+    private lateinit var posts : List<PostData>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posts)
-        val listView = findViewById<ListView>(R.id.myView)
-        var posts = ArrayList<String>()
+        recylerview = findViewById(R.id.recyclerView)
+        recylerview.layoutManager = LinearLayoutManager(this)
+        recylerview.setHasFixedSize(true)
+        val isMyPost = intent.getBooleanExtra("MY_POSTS", true)
         val sharedPred = SharedPreferencesManager(this)
         val name = sharedPred.retrieveName()
-        Log.i("test", name)
         val repo = Repository()
         CoroutineScope(Dispatchers.IO).launch {
-            val p = repo.getPosts(name)
-            posts = p?.let { ModelToList(it).toArrayList() }!!
-            withContext(Dispatchers.Main) {}
+            posts = if(isMyPost){
+                repo.getPosts(name)!!
+            } else {
+                repo.getPosts()!!
+            }
+            withContext(Dispatchers.Main) {
+                recylerview.adapter = posts.let { PostsAdapter(it) }
+            }
         }
-        val adapter: ArrayAdapter<String> =
-            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, posts)
-        listView.setAdapter(adapter)
-
     }
 }

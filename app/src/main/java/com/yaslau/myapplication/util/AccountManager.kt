@@ -4,20 +4,19 @@ import android.content.Context
 import android.provider.ContactsContract
 import android.util.Log
 import com.yaslau.myapplication.repository.Repository
+import com.yaslau.myapplication.repository.RepositoryInterface
 import com.yaslau.myapplication.states.LoginState
 import com.yaslau.myapplication.states.SignUpState
 
-class AccountManager(var context: Context) {
+class AccountManager(val repository: RepositoryInterface,
+                     val sharedPref : ISharedPref): IAccountManager {
 
-    private val repository = Repository()
-    private val sharedPref = SharedPreferencesManager(context)
-
-    suspend fun signUp(name: String, email: String, password: String) : SignUpState{
+    override suspend fun signUp(name: String, email: String, password: String) : SignUpState{
         val state = repository.signup(email, password, name, "N/A", "N/A", "N/A")
         return state
     }
 
-    suspend fun login(email: String, password: String): LoginState{
+    override suspend fun login(email: String, password: String): LoginState{
         val state = repository.login(email, password)
         val name = repository.getUserName(email)
         if(state == LoginState.SUCCESS){
@@ -25,15 +24,12 @@ class AccountManager(var context: Context) {
             sharedPref.storeEmail(email)
             if (name != null) {
                 sharedPref.storeName(name)
-                Log.i("null", name)
-            }else{
-                Log.i("null", "null")
             }
         }
         return state
     }
 
-    fun logout(){
+    override fun logout(){
         sharedPref.storeLoginStatus(false)
         sharedPref.storeEmail("N/A")
     }

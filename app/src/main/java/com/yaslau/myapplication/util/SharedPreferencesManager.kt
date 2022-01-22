@@ -5,25 +5,25 @@ import android.content.SharedPreferences
 import com.yaslau.myapplication.exceptions.UsernameNotSavedException
 
 
-class SharedPreferencesManager(var context: Context) {
+class SharedPreferencesManager(var context: Context) : ISharedPref {
 
     private val sharedPref: SharedPreferences = context.getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE)
 
-    fun storeEmail(email : String){
+    override fun storeEmail(email : String){
        val editor = sharedPref.edit()
         editor.apply{
             putString("EMAIL", email)
         }.apply()
     }
 
-    fun storeLoginStatus(loggedIn : Boolean){
+    override fun storeLoginStatus(loggedIn : Boolean){
         val editor = sharedPref.edit()
         editor.apply{
             putBoolean("LOGGED", loggedIn)
         }.apply()
     }
 
-    fun retrieveEmail() : String{
+    override fun retrieveEmail() : String{
         val email = sharedPref.getString("EMAIL", null)
         if (email != null) {
             return email
@@ -31,11 +31,11 @@ class SharedPreferencesManager(var context: Context) {
         else throw UsernameNotSavedException()
     }
 
-    fun retrieveLoginStatus(): Boolean {
+    override fun retrieveLoginStatus(): Boolean {
         return sharedPref.getBoolean("LOGGED", false)
     }
 
-    fun retrieveName() : String{
+    override fun retrieveName() : String{
         val name = sharedPref.getString("NAME", null)
         if (name != null) {
             return name
@@ -43,7 +43,7 @@ class SharedPreferencesManager(var context: Context) {
         else throw UsernameNotSavedException()
     }
 
-    fun storeName(name : String){
+    override fun storeName(name : String){
         val editor = sharedPref.edit()
         editor.apply{
             putString("NAME", name)
