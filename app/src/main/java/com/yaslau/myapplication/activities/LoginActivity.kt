@@ -25,9 +25,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val signUpText : TextView = findViewById(R.id.signUpText)
-        signUpText.setOnClickListener { signUp() }
+        setContentView(R.layout.sign_in)
+        val signUpButton : TextView = findViewById(R.id.signUpButton)
+        signUpButton.setOnClickListener { signUp() }
         val loginButton : Button = findViewById(R.id.loginButton)
         loginButton.setOnClickListener { login() }
         emailText = findViewById(R.id.emailEditText)

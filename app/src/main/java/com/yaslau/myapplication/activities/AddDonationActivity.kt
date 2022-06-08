@@ -1,5 +1,6 @@
 package com.yaslau.myapplication.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,19 +14,21 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class AddDonationActivity : AppCompatActivity() {
-    lateinit var typeEditText: EditText
+    lateinit var nameEditText: EditText
     lateinit var idEditText: EditText
     lateinit var valueEditText: EditText
+    lateinit var descriptionEditText: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_donation)
+        setContentView(R.layout.add_donation)
         val button: Button = findViewById(R.id.addDonationButton)
         button.setOnClickListener { addDonation() }
-        typeEditText = findViewById(R.id.typeEditText)
+        nameEditText = findViewById(R.id.nameEditText)
         idEditText = findViewById(R.id.idEditText)
         valueEditText = findViewById(R.id.valueEditText)
+        descriptionEditText = findViewById(R.id.descriptionEditText)
     }
 
     fun addDonation() {
@@ -33,9 +36,11 @@ class AddDonationActivity : AppCompatActivity() {
         val repo = Repository()
         val charityName = sharedPref.retrieveName()
         CoroutineScope(Dispatchers.IO).launch {
-            repo.insertDonation(charityName, idEditText.text.toString(),
-                valueEditText.text.toString(), typeEditText.text.toString())
+            repo.insertDonation(charityName, nameEditText.text.toString(), idEditText.text.toString(),
+                valueEditText.text.toString(), descriptionEditText.text.toString())
             withContext(Dispatchers.Main) {
+                val myIntent = Intent(applicationContext, HomePageActivity::class.java)
+                startActivity(myIntent)
             }
         }
     }

@@ -12,7 +12,7 @@ class AccountManager(val repository: RepositoryInterface,
                      val sharedPref : ISharedPref): IAccountManager {
 
     override suspend fun signUp(name: String, email: String, password: String) : SignUpState{
-        val state = repository.signup(email, password, name, "N/A", "N/A", "N/A")
+        val state = repository.signup(email, password, name)
         return state
     }
 

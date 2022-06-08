@@ -9,7 +9,8 @@ import com.yaslau.myapplication.R
 import com.yaslau.myapplication.data.DonationData
 
 
-class DonationsAdapter(private val newsList : List<DonationData>) : RecyclerView.Adapter<DonationsAdapter.MyViewHolder>(){
+class DonationsAdapter( var newsList : List<DonationData>) : RecyclerView.Adapter<DonationsAdapter.MyViewHolder>(){
+     lateinit var listener: OnItemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -17,17 +18,25 @@ class DonationsAdapter(private val newsList : List<DonationData>) : RecyclerView
             R.layout.donation_item,
             parent,false)
 
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView, listener)
 
+    }
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
+    fun setOnItemClickListener(listener: DonationsAdapter.OnItemClickListener){
+        this.listener = listener
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val currentItem = newsList[position]
         holder.id.text = currentItem.donee_id
-        holder.type.text = currentItem.type
+        holder.description.text = currentItem.description
+        holder.name.text = currentItem.name
         holder.value.text = currentItem.value.toString()
         holder.date.text = currentItem.date
+        holder.username.text = currentItem.user_name
 
     }
 
@@ -37,13 +46,21 @@ class DonationsAdapter(private val newsList : List<DonationData>) : RecyclerView
         return newsList.size
     }
 
-    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView : View, listener: OnItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         val id : TextView = itemView.findViewById(R.id.id)
-        val type : TextView = itemView.findViewById(R.id.type)
+        val name : TextView = itemView.findViewById(R.id.name)
+        val description : TextView = itemView.findViewById(R.id.description)
         val value : TextView = itemView.findViewById(R.id.value)
         val date : TextView = itemView.findViewById(R.id.donation_date)
+        val username : TextView = itemView.findViewById(R.id.username)
 
+        init {
+            itemView.setOnClickListener(){
+                listener.onItemClick(absoluteAdapterPosition)
+            }
+        }
     }
+
 
 }

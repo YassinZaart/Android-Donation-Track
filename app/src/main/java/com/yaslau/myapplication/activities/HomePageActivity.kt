@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.cardview.widget.CardView
 import com.yaslau.myapplication.R
 import com.yaslau.myapplication.repository.Repository
 import com.yaslau.myapplication.util.SharedPreferencesManager
@@ -12,20 +13,23 @@ import com.yaslau.myapplication.util.SharedPreferencesManager
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_page)
-        val addPostButton : Button = findViewById(R.id.addPostButton)
+        setContentView(R.layout.dashboard)
+        val addPostButton : CardView = findViewById(R.id.addPostButton)
         addPostButton.setOnClickListener { addPost() }
-        val addDonationButton : Button = findViewById(R.id.addDonationsButton)
+        val addDonationButton : CardView = findViewById(R.id.addDonationsButton)
         addDonationButton.setOnClickListener { addDonation() }
-        val getDonationsButton : Button = findViewById(R.id.checkDonationsButton)
-        getDonationsButton.setOnClickListener { getDonations() }
-        val getMyPostsButton : Button = findViewById(R.id.myPostsButton)
+        val getDonationsButton : CardView = findViewById(R.id.checkDonationsButton)
+        getDonationsButton.setOnClickListener { getDonations(false) }
+        val getMyDonationsButton : CardView = findViewById(R.id.checkMyDonationsButton)
+        getMyDonationsButton.setOnClickListener { getDonations(true) }
+        val getMyPostsButton : CardView = findViewById(R.id.myPostsButton)
         getMyPostsButton.setOnClickListener { getPosts(true) }
-        val getPosts : Button = findViewById(R.id.postsButton)
+        val getPosts : CardView = findViewById(R.id.postsButton)
         getPosts.setOnClickListener { getPosts(false) }
-        val logOutButton : Button = findViewById(R.id.logoutButton)
+        val logOutButton : CardView = findViewById(R.id.logoutButton)
         logOutButton.setOnClickListener { logOut() }
     }
+
     fun addPost(){
         val myIntent = Intent(this, AddPostActivity::class.java)
         startActivity(myIntent)
@@ -39,8 +43,9 @@ class HomePageActivity : AppCompatActivity() {
         myIntent.putExtra("MY_POSTS", myPosts)
         startActivity(myIntent)
     }
-    fun getDonations(){
+    fun getDonations(isMyDonations: Boolean){
         val myIntent = Intent(this, DonationsActivity::class.java)
+        myIntent.putExtra("MY_DONATIONS", isMyDonations)
         startActivity(myIntent)
     }
     fun logOut(){

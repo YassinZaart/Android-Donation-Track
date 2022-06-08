@@ -3,6 +3,7 @@ package com.yaslau.myapplication.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -25,9 +26,9 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
-        val signInText : TextView = findViewById(R.id.signInText)
-        signInText.setOnClickListener { signIn() }
+        setContentView(R.layout.sign_up)
+        val signInButton : Button = findViewById(R.id.signInButton)
+        signInButton.setOnClickListener { signIn() }
         val signUpButton : Button = findViewById(R.id.signUpButton)
         signUpButton.setOnClickListener { signUp() }
         nameText = findViewById(R.id.usernameEditText)
@@ -48,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
             val state =
                 accountManager.signUp(nameText.text.toString(), emailText.text.toString(), passwordText.text.toString())
             withContext(Dispatchers.Main) {
-
+                Log.i("hi", nameText.text.toString()+  emailText.text.toString()+passwordText.text.toString() )
                 when (state) {
                     SignUpState.USER_EXISTS -> Toast.makeText(
                         applicationContext,

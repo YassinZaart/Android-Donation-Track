@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".activities.ContributionPopUp"
+            android:theme="@style/Theme.MyApplication.Pop"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EditDonationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EditPostActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.DonationsActivity"
             android:exported="true" />
         <activity
