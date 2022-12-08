@@ -29,11 +29,17 @@ Admins can:
 - Accept/Decline verification requests
 
 # Screenshots
+
+## Unverified User 
 ![Screenshot (401)](https://user-images.githubusercontent.com/57755788/206480928-9f5533af-0731-427f-bbe0-284039d5d12b.png)
 ![Screenshot (403)](https://user-images.githubusercontent.com/57755788/206482478-ed62cfc6-7d6a-4337-9761-f5e2cc5ad56b.png)
 ![Screenshot (405)](https://user-images.githubusercontent.com/57755788/206482171-a6ef5867-2617-4088-9e76-a69a8bc4dcf7.png)
+
+## Admin
 ![Screenshot (407)](https://user-images.githubusercontent.com/57755788/206482220-c9aebf5d-a0b7-4680-9dc0-292209abf600.png)
 ![Screenshot (408)](https://user-images.githubusercontent.com/57755788/206482258-c0f40df8-ea77-459d-8d7c-44f1744169ee.png)
+
+## Verified User
 ![Screenshot (410)](https://user-images.githubusercontent.com/57755788/206482283-47f56aef-5daa-4455-9643-f0c3684a874f.png)
 ![Screenshot (411)](https://user-images.githubusercontent.com/57755788/206482323-01f4bd71-2740-4c65-bdbb-faf607af0933.png)
 ![Screenshot (413)](https://user-images.githubusercontent.com/57755788/206482385-0f126c32-acdf-4b9c-a302-238a9e1e9e88.png)
